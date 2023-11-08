@@ -1,0 +1,4 @@
+virtualenv
+virtualenvwrapper-win
+virtualenvwrapper
+django

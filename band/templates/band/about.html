@@ -1,0 +1,192 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Lunar Alchemy</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Navbar Styles */
+        .navbar {
+            background-color: #000;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: white;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #ffc107; /* Yellow color on hover */
+        }
+
+        /* Space-themed Background */
+        body {
+            background-image: url("{%static 'capstone/images/space-bg.gif' %}"); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        /* Content Styles */
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Member Cards Styles */
+        .member-card {
+            margin-top: 20px;
+        }
+
+        .footer {
+            background-color: #000;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .social-icon {
+            width: 30px; 
+            margin: 0 10px; 
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Lunar Alchemy</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'band:home' %}">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'band:about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'band:blog' %}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'band:logout' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <div class="container">
+        <h1>About Lunar Alchemy</h1>
+        <p>Lunar Alchemy is a band formed by four childhood best friends: Ricky, Quentin, Marcus, and Luke. They met in their music class in primary school and bonded over their shared love of outer space. By the time they got to high school, they had started a band in Quentin's parents' garage.</p>
+    </div>
+
+    <!-- Member Information Section -->
+    <div class="container">
+        <div class="row">
+            <!-- Ricky -->
+            <div class="col-md-3 member-card">
+                <div class="card">
+                    <img src="{%static 'capstone/images/ricky.png'%}" class="card-img-top" alt="Ricky">
+                    <div class="card-body">
+                        <h5 class="card-title">Ricky</h5>
+                        <p class="card-text">Lead Guitarist</p>
+                        <p>Ricky, the band's lead guitarist, is a musician whose journey began with the discovery of an old acoustic guitar in his grandfather's attic during his childhood. 
+                            His skills flourished as he joined high school bands, drawing inspiration from legends like Jimi Hendrix. 
+                            Ricky's signature style blends blues, rock, and funk, crafting captivating solos that transport listeners. 
+                            Beyond music, he finds inspiration in nature through hikes and has a passion for vintage guitar gear, dedicating hours to perfecting his instruments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quentin -->
+            <div class="col-md-3 member-card">
+                <div class="card">
+                    <img src="{%static 'capstone/images/quentin.png'%}" class="card-img-top" alt="Quentin">
+                    <div class="card-body">
+                        <h5 class="card-title">Quentin</h5>
+                        <p class="card-text">Bass Guitarist</p>
+                        <p>
+                            Quentin, the band's bass guitar virtuoso's musical journey began when he stumbled upon a dusty bass guitar at a garage sale, captivated by its resonant tones. 
+                            His life soon revolved around the bass, hours of practice leading to a unique groove in the band's music.
+                            Inspired by bass legends like Jaco Pastorius and Flea, Quentin's basslines provide a solid foundation and distinctive pulse to their songs.
+                            Beyond the stage, he explores audio production, experimenting with effects, and collecting vintage bass guitars, each with a unique story.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marcus -->
+            <div class="col-md-3 member-card">
+                <div class="card">
+                    <img src="{%static 'capstone/images/marcus.png'%}" class="card-img-top" alt="Marcus">
+                    <div class="card-body">
+                        <h5 class="card-title">Marcus</h5>
+                        <p class="card-text">Drummer</p>
+                        <p>
+                            Marcus, the band's rhythmic heartbeat's passion for percussion ignited when he joined his school's marching band.
+                            Marcus's devotion led to tireless practice, shaping his drumming style with a fusion of rock, funk, and jazz influences, infusing the band's music with an infectious groove. 
+                            His impressive collection of drum kits, each with a distinct sound, underscores his reputation for powerful solos and crowd-rousing energy. 
+                            Beyond the drum kit, Marcus mentors aspiring musicians, passing on his rhythmic knowledge, and contributes creatively to the band's songwriting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Luke -->
+            <div class="col-md-3 member-card">
+                <div class="card">
+                    <img src="{%static 'capstone/images/luke.png'%}" class="card-img-top" alt="Luke">
+                    <div class="card-body">
+                        <h5 class="card-title">Luke</h5>
+                        <p class="card-text">Keyboardist</p>
+                        <p>
+                            Luke, the band's keyboardist, began his musical odyssey when his parents gifted him a small keyboard on his birthday, unknowingly sparking an enduring love for music. 
+                            His formative years were a deep dive into the world of piano and keyboards.
+                            Influenced by keyboard legends like Herbie Hancock and Rick Wakeman, Luke is celebrated for his virtuosic solos and his remarkable ability to convey a spectrum of emotions through his keyboard wizardry. 
+                            Offstage, Luke enjoys reading, writing, and exploring the outdoors, finding inspiration in nature's beauty.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Follow Us:</p>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="{% static 'capstone/images/facebook.png' %}" alt="Facebook" class="social-icon" />
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="{% static 'capstone/images/instagram.png' %}" alt="Instagram" class="social-icon" />
+                    </a>
+                    <a href="https://twitter.com" target="_blank">
+                        <img src="{% static 'capstone/images/twitter.png' %}" alt="Twitter" class="social-icon" />
+                    </a>
+                    <a href="https://youtube.com" target="_blank">
+                        <img src="{% static 'capstone/images/youtube.png' %}" alt="YouTube" class="social-icon" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Include Bootstrap JavaScript (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

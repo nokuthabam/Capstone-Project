@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Alchemy - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Navbar Styles */
+        .navbar {
+            background-color: #000;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: white;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #ffc107; /* Yellow color on hover */
+        }
+
+        /* Hero Section Styles */
+        .hero-section {
+            background-image: url("{% static 'capstone/images/header.gif '%}"); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 150px 0;
+        }
+
+        .hero-heading {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        /* Latest Album Styles */
+        .latest-album {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        /* Upcoming Tour Dates Styles */
+        .tour-dates {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+        .center-table {
+            margin: 0 auto;
+            width: 80%; 
+        }.calendar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+        }
+        .music-buttons {
+            text-align: center;
+            margin-top: 20px; 
+        }
+
+        .music-button {
+            display: inline-block;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px; 
+            margin: 10px; 
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .music-button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .music-icon {
+            max-width: 20px; 
+            vertical-align: middle;
+            margin-left: 10px; 
+        }
+        .footer {
+            background-color: #000;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .social-icon {
+            width: 30px; 
+            margin: 0 10px; 
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Lunar Alchemy</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'band:home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'band:about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'band:blog' %}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'band:logout' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <h1 class="hero-heading">Music is the alchemy of the soul</h1>
+    
+    </div>
+</div>
+
+<div class="latest-album">
+    <div class="container">
+        <h2>Galactic Groove</h2>
+        <p>Discover our newest music release.</p>
+        <img src="{% static 'capstone/images/disco_ball.gif' %}" alt="Latest Album Cover" />
+        <div class="music-buttons">
+            <a href="https://open.spotify.com/?" class="btn btn-dark music-button">
+                Listen on Spotify
+                <img src="{% static 'capstone/images/spotify.png' %}" alt="Spotify Logo" class="music-icon" />
+            </a>
+            <a href="https://music.apple.com/us/browse" class="btn btn-dark music-button">
+                Listen on Apple Music
+                <img src="{% static 'capstone/images/apple.png' %}" alt="Apple Music Logo" class="music-icon" />
+            </a>
+        </div>
+        <div class="tracklist">
+            <h3>Tracklist:</h3>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li>1. Stellar Beat</li>
+                <li>2. Cosmic Funk</li>
+                <li>3. Interstellar Groove</li>
+                <li>4. Galactic Dance Party</li>
+                <li>5. Astro Rhythm</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="tour-dates">
+    <div class="container">
+        <h2>Upcoming Tour Dates</h2>
+        <p>Join us on our next musical journey.</p>
+        
+        <!-- Calendar with Random Tour Dates -->
+        <div class="calendar">
+            <table class="center-table">
+                <tr>
+                    <th>Date</th>
+                    <th>Location</th>
+                </tr>
+                <tr>
+                    <td>Oct 31, 2023</td>
+                    <td>New York City, NY</td>
+                </tr>
+                <tr>
+                    <td>Nov 5, 2023</td>
+                    <td>Los Angeles, CA</td>
+                </tr>
+                <tr>
+                    <td>Nov 16, 2023</td>
+                    <td>Chicago, IL</td>
+                </tr>
+                <tr>
+                    <td>Nov 23, 2023</td>
+                    <td>New Orleans, LA</td>
+                </tr>
+                <tr>
+                    <td>Dec 3, 2023</td>
+                    <td>Miami, FL</td>
+                </tr>
+                <tr>
+                    <td>Dec 15, 2023</td>
+                    <td>Detroit, MI</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>Follow Us:</p>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="{% static 'capstone/images/facebook.png' %}" alt="Facebook" class="social-icon" />
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="{% static 'capstone/images/instagram.png' %}" alt="Instagram" class="social-icon" />
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <img src="{% static 'capstone/images/twitter.png' %}" alt="Twitter" class="social-icon" />
+                </a>
+                <a href="https://youtube.com" target="_blank">
+                    <img src="{% static 'capstone/images/youtube.png' %}" alt="YouTube" class="social-icon" />
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- Include Bootstrap JavaScript (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
