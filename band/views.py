@@ -12,7 +12,7 @@ from .models import Post
 #Authentication views
 def signup(request):
     """
-    This view will render the signup page.
+    This view will render the signup page for the band app.
     Parameters:
         request: HttpRequest object
     Returns:
@@ -30,7 +30,7 @@ def signup(request):
 
 def user_login(request):
     """
-    This view will render the login page.
+    This view will render the login page for the band app.
     Parameters:
         request: HttpRequest object
     Returns:
@@ -56,7 +56,7 @@ def user_login(request):
 
 def user_logout(request):
     """
-    This view will render the logout page.
+    This view will render the logout page for the band app.
     Parameters:
         request: HttpRequest object
     Returns:
@@ -69,7 +69,11 @@ def user_logout(request):
 #Band website views
 def index(request):
     """
-    This view renders the landing page for the band app.
+    This view renders the landing page for the band app (index.html).
+    Parameters:
+        request: HttpRequest object
+    Returns:
+        HttpResponse object
     """
     return render(request, 'band/landing.html')
 
@@ -77,6 +81,10 @@ def index(request):
 def home(request):
     """
     This view renders the home page for the band app.
+    Parameters:
+        request: HttpRequest object
+    Returns:
+        HttpResponse object
     """
     return render(request, 'band/home.html')
 
@@ -91,6 +99,10 @@ def about(request):
 def blog(request):
     """
     This view renders the blog page for the band app.
+    Parameters:
+        request: HttpRequest object
+    Returns:
+        HttpResponse object
     """
     #get all posts from database
     posts = Post.objects.all()
