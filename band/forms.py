@@ -5,9 +5,9 @@ from django.core.exceptions import ValidationError
 
 class SignUpForm(forms.Form):
     """
-    This class will create a form for the user to sign up.
+    This class will create a form for the user to sign up if they do not have an account.
     Parameters:
-        forms.form: form
+        forms.form: form 
     Attributes:
         username: str
         password: str
@@ -24,7 +24,7 @@ class SignUpForm(forms.Form):
 
     def clean_username(self):
         """
-        This method will check if the username is already taken.
+        This method will check if the username is already taken
         Parameters:
             self: SignUpForm object
         Returns:
@@ -39,7 +39,7 @@ class SignUpForm(forms.Form):
     #save the user to the database
     def save(self):
         """
-        This method will save the user to the database.
+        This saves the user to the database after sign up.
         Parameters:
             self: SignUpForm object
         Returns:
