@@ -12,11 +12,13 @@ from .models import Post
 #Authentication views
 def signup(request):
     """
-    This view will render the signup page for the band app.
-    Parameters:
-        request: HttpRequest object
-    Returns:
-        HttpResponse object
+    Render the signup page for the band app.
+
+    :param request: HttpRequest object
+    :type request: django.http.HttpRequest
+
+    :return: HttpResponse object
+    :rtype: django.http.HttpResponse
     """
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -30,11 +32,13 @@ def signup(request):
 
 def user_login(request):
     """
-    This view will render the login page for the band app.
-    Parameters:
-        request: HttpRequest object
-    Returns:
-        HttpResponse object
+    Render the login page for the band app.
+
+    :param request: HttpRequest object
+    :type request: django.http.HttpRequest
+
+    :return: HttpResponse object
+    :rtype: django.http.HttpResponse
     """
     if request.method == 'POST':
         username = request.POST['username']
@@ -56,11 +60,13 @@ def user_login(request):
 
 def user_logout(request):
     """
-    This view will render the logout page for the band app.
-    Parameters:
-        request: HttpRequest object
-    Returns:
-        HttpResponse object
+    Render the logout page for the band app.
+
+    :param request: HttpRequest object
+    :type request: django.http.HttpRequest
+
+    :return: HttpResponse object
+    :rtype: django.http.HttpResponse
     """
     logout(request)
     return redirect(reverse('band:index'))
@@ -69,40 +75,49 @@ def user_logout(request):
 #Band website views
 def index(request):
     """
-    This view renders the landing page for the band app (index.html).
-    Parameters:
-        request: HttpRequest object
-    Returns:
-        HttpResponse object
+    Render the landing page for the band app (index.html).
+
+    :param request: HttpRequest object
+    :type request: django.http.HttpRequest
+
+    :return: HttpResponse object
+    :rtype: django.http.HttpResponse
     """
     return render(request, 'band/landing.html')
 
 
 def home(request):
     """
-    This view renders the home page for the band app.
-    Parameters:
-        request: HttpRequest object
-    Returns:
-        HttpResponse object
+    Render the home page for the band app.
+
+    :param request: HttpRequest object
+    :type request: django.http.HttpRequest
+
+    :return: HttpResponse object
+    :rtype: django.http.HttpResponse
     """
     return render(request, 'band/home.html')
 
 
 def about(request):
     """
-    This view renders the about page for the band app.
+    Render the about page for the band app.
+
+    :param request: HttpRequest object
+    :type request: django.http.HttpRequest
     """
     return render(request, 'band/about.html')
 
 
 def blog(request):
     """
-    This view renders the blog page for the band app.
-    Parameters:
-        request: HttpRequest object
-    Returns:
-        HttpResponse object
+    Render the blog page for the band app.
+
+    :param request: HttpRequest object
+    :type request: django.http.HttpRequest
+
+    :return: HttpResponse object
+    :rtype: django.http.HttpResponse
     """
     #get all posts from database
     posts = Post.objects.all()
