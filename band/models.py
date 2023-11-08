@@ -19,7 +19,7 @@ class Post(models.Model):
     
     def __str__(self):
         """
-        This method will return the title of the post.
+        This method will return the title of the post
         Parameters:
             self: Post object
         Returns:
