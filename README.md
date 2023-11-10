@@ -6,6 +6,7 @@
 - [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Docker](#docker)
 - [Project Author](#project-author)
 
 ## Project Description
@@ -56,7 +57,19 @@ To run this project on your local system, follow these steps:
    - Visit http://127.0.0.1:8000/ to access the landing page
    - Click "Explore" to go to the login page, where you can sign up or log in if you have credentials.
    - Once logged in, you can navigate through the website's various pages.
-   
+
+## Docker
+   - In order to run using the docker image, use the following commands
+   1. To download the image from docker hub:
+      - docker pull nmoyo45/django_website:latest
+
+   2. To run the image
+      - docker run -it -p 8000:8000 nmoyo45/django_website:latest python manage.py runserver 0.0.0.0:8000
+   3. To access the Landing Page:
+      - Visit http://127.0.0.1:8000/ or http://localhost:8000/
+      - Click "Explore" to go to the login page, where you can sign up or log in if you have credentials.
+      - Once logged in, you can navigate through the website's various pages.
+
 ## Project Author
 Nokuthaba Moyo
 
