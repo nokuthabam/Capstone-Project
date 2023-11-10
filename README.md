@@ -29,3 +29,35 @@ To run this project on your local system, follow these steps:
 
    ```bash
    git clone https://github.com/nokuthabam/django-band-website.git
+
+2. Install project dependencies:
+   - pip install -r requirements.txt
+     
+2. Installing Django and creating virtual environment:
+   - mkvirtualenv my_django
+   - workon my_django
+   -  pip install django
+  
+3. Navigate to the project directory:
+   - cd django-band-website/capstone
+
+3. Apply database migrations:
+   - python manage.py migrate
+
+4. Create a superuser to manage the Django admin panel:
+   - python manage.py createsuperuser
+
+5. Start the development server:
+   - python manage.py runserver
+
+6. Access the website at http://127.0.0.1:8000/
+
+## Usage
+   - Visit http://127.0.0.1:8000/ to access the landing page
+   - Click "Explore" to go to the login page, where you can sign up or log in if you have credentials.
+   - Once logged in, you can navigate through the website's various pages.
+   
+## Project Author
+Nokuthaba Moyo
+
+Feel free to explore and customize the Django Band Website to suit your band or project needs.
